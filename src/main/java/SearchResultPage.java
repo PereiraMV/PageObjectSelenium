@@ -9,10 +9,10 @@ public class SearchResultPage {
         this.driver = driver;
     }
 
-    public ProductPage OpenProductPage(){
+    public ProductPage OpenProductPage(int index){
 
 
-        driver.findElements(firstSwitchSelector).get(0).click();
+        driver.findElements(firstSwitchSelector).get(index).click();
         return new ProductPage(driver);
     }
 

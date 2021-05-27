@@ -35,14 +35,14 @@ public class TestAmazonPageObject {
         expectedResult = research = "Nintendo Switch";
         //Act
         HomePage homePage = new HomePage(driver);
-        boolean result = homePage
+        String result = homePage
                 .search(research)
-                .OpenProductPage()
-                .isNintendoSwitchContained(expectedResult);
+                .OpenProductPage(0)
+                .isNintendoSwitchContained();
 
         //Assert
 
-        Assert.assertTrue(result, "The message "+ expectedResult + " was not found in the title");
+        Assert.assertTrue(result.contains(expectedResult), "The message "+ expectedResult + " was not found in the title");
 
     }
 

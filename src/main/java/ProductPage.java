@@ -4,15 +4,16 @@ import org.openqa.selenium.WebDriver;
 public class ProductPage {
 
     WebDriver driver;
-    public static final String idTextDispayed = "productTitle";
+    By TextDispayedSelector = By.id("productTitle");
 
     public ProductPage(WebDriver driver){
         this.driver = driver;
     }
 
-    public boolean isNintendoSwitchContained(String expectedText){
-        String displayedText = driver.findElement(By.id(idTextDispayed)).getText();
+    public String isNintendoSwitchContained(){
 
-        return displayedText.contains(expectedText) ;
+        String displayedText = driver.findElement(TextDispayedSelector).getText();
+
+        return displayedText ;
     }
 }
