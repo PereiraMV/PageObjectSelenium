@@ -36,8 +36,7 @@ public class TestAmazonPageObject {
         //Act
         HomePage homePage = new HomePage(driver);
         boolean result = homePage
-                .enterTextSearchBar(research)
-                .OpenSearchResultPage()
+                .search(research)
                 .OpenProductPage()
                 .isNintendoSwitchContained(expectedResult);
 

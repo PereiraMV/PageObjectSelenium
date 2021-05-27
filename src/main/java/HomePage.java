@@ -9,13 +9,9 @@ public class HomePage {
         this.driver = driver;
     }
 
-    public HomePage enterTextSearchBar(String text){
 
+    public SearchResultPage search(String text){
         driver.findElement(ResearchBarSelector).sendKeys(text);
-        return this;
-    }
-    public SearchResultPage OpenSearchResultPage(){
-
         driver.findElement(ButtonSearchSelector).click();
         return new SearchResultPage(driver);
     }
