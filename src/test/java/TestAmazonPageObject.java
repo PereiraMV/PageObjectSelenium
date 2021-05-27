@@ -31,19 +31,19 @@ public class TestAmazonPageObject {
     public void testAchatNintendoSwitch(){
 
         //Arrange
-        String research = "Nintendo Switch";
-        String expectedResult = research;
+        String research, expectedResult;
+        expectedResult = research = "Nintendo Switch";
         //Act
         HomePage homePage = new HomePage(driver);
         boolean result = homePage
                 .enterTextSearchBar(research)
-                .OpenSwitchSearchListPage()
-                .OpenSwitchNeonRedBluePage()
-                .isNintendoSwitchDisplayed(expectedResult);
+                .OpenSearchResultPage()
+                .OpenProductPage()
+                .isNintendoSwitchContained(expectedResult);
 
         //Assert
 
-        Assert.assertTrue(result, "Le message "+ expectedResult + "n'a pas été trouvé");
+        Assert.assertTrue(result, "The message "+ expectedResult + " was not found in the title");
 
     }
 

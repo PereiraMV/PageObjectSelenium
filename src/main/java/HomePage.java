@@ -3,19 +3,21 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage {
     WebDriver driver;
+    By ResearchBarSelector = By.id("twotabsearchtextbox");
+    By ButtonSearchSelector = By.id("nav-search-submit-button");
     public HomePage(WebDriver driver){
         this.driver = driver;
     }
 
     public HomePage enterTextSearchBar(String text){
 
-        driver.findElement(By.id("twotabsearchtextbox")).sendKeys(text);
+        driver.findElement(ResearchBarSelector).sendKeys(text);
         return this;
     }
-    public SwitchSearchListPage OpenSwitchSearchListPage(){
+    public SearchResultPage OpenSearchResultPage(){
 
-        driver.findElement(By.id("nav-search-submit-button")).click();
-        return new SwitchSearchListPage(driver);
+        driver.findElement(ButtonSearchSelector).click();
+        return new SearchResultPage(driver);
     }
 
 }
