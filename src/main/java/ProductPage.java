@@ -10,7 +10,7 @@ public class ProductPage {
         this.driver = driver;
     }
 
-    public String isNintendoSwitchContained(){
+    public String getProductTitle(){
 
         String displayedText = driver.findElement(TextDispayedSelector).getText();
 

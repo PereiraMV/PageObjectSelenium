@@ -38,7 +38,7 @@ public class TestAmazonPageObject {
         String result = homePage
                 .search(research)
                 .OpenProductPage(0)
-                .isNintendoSwitchContained();
+                .getProductTitle();
 
         //Assert
 
